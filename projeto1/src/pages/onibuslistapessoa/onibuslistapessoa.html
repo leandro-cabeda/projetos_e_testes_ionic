@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Pessoa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item-group class="col">
+              <ion-row>Nome da Pessoa: {{ buu.pessoa.nome}}</ion-row>
+              <ion-row>Nome da Cidade da Pessoa: {{buu.pessoa.cidade}}</ion-row>
+              <ion-row>Numero do CPF da Pessoa: {{buu.pessoa.cpf}}</ion-row>
+          <button class="b" ion-button round *ngIf="!buu.pessoa.confirmar">
+            <ion-icon ios="ios-thumbs-down" md="md-thumbs-down"></ion-icon>
+          </button>
+
+          <button ion-button class="b" round *ngIf="buu.pessoa.confirmar">
+             <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon>
+          </button>
+    </ion-item-group>
+    <button ion-button item-end icon-left round (click)="listaonibus()">
+        <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back">    Voltar para Lista de ônibus</ion-icon>
+    </button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-title text-center>Todos os direitos Reservados.</ion-title>
+  </ion-toolbar>
+</ion-footer>

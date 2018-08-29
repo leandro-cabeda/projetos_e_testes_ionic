@@ -1,0 +1,34 @@
+
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Lista de Consultas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let consulta of consulta" color="secondary">
+          <ion-row color="dark" class="col">Nome Linha: {{ consulta.bus.nome }}</ion-row>
+          <ion-row  color="dark" class="col"> Dia do Envio da Consulta: {{ consulta.data }}</ion-row>
+          <ion-row class="col" color="dark">Codigo Consulta Linha: {{ consulta.bus.codigo }}</ion-row>
+          <ion-row class="col" color="dark">Identificador Consulta Linha: {{ consulta.bus.id }}</ion-row>
+          <button ion-button item-end icon-only clear round class="op" (click)="visualizar(consulta.bus)">
+          <ion-icon ios="ios-list-box" md="md-list-box">Ver Pessoa do Ônibus</ion-icon></button>
+    </ion-item>
+  </ion-list>
+    <button ion-button item-end icon-left round (click)="listaonibus()">
+        <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back">    Voltar para Lista de ônibus</ion-icon>
+    </button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-title text-center>Todos os direitos Reservados.</ion-title>
+  </ion-toolbar>
+</ion-footer>

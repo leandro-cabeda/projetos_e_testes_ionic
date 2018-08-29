@@ -1,0 +1,52 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Carro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+      <ion-card-content>
+          <ion-item-group>
+              <ion-item-divider color="light">
+                  <ion-icon ios="ios-car" md="md-car" item-left></ion-icon>
+                    Veiculo
+              </ion-item-divider>
+              <ion-item>{{carro.nome}}</ion-item>
+              <ion-item>R$ {{carro.preco}}</ion-item>
+          </ion-item-group>
+
+           <ion-item-group>
+              <ion-item-divider color="light">
+                  <ion-icon name="options" item-left></ion-icon>
+                  ACESSÓRIOS
+              </ion-item-divider>
+              <ion-item *ngFor="let acessorio of acessorios">
+                  <ion-label>
+                      <h2>{{acessorio.nome}}</h2>
+                      <h3>{{acessorio.valor}}</h3>
+                  </ion-label>
+                  <ion-toggle #toggle color="secondary"
+                  (ionChange)="atualizaTotal(toggle.checked, acessorio)"></ion-toggle>
+              </ion-item>
+          </ion-item-group>
+
+          <ion-item-divider color="light">
+              TOTAL: RS {{ precoTotal }}
+          </ion-item-divider>
+
+      </ion-card-content>
+  </ion-card>
+
+  <ion-fab top right>
+    <button ion-fab (click)="abreAgendamento()">
+        <ion-icon name="arrow-dropright"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

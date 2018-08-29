@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title text-center>Ônibus</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="v2" padding >
+  <ion-card >
+      <ion-card-content>
+          <ion-item-group>
+              <ion-item-divider color="secondary">
+                  <label ><ion-icon ios="ios-bus" md="md-bus" item-left></ion-icon>
+                    Ônibus</label>
+              </ion-item-divider>
+              <ion-item ><label>Linha:</label>   {{bu.nome}}</ion-item>
+              <ion-item > <label>Identificador:</label>   {{bu.id}}</ion-item>
+          </ion-item-group>
+
+           <ion-item-group>
+              <ion-item-divider color="primary">
+                  <ion-icon ios="ios-apps" md="md-apps" item-left></ion-icon>
+                  FUNÇÃO
+              </ion-item-divider>
+              <ion-item >
+                <ion-label > Marcar o Ônibus se Deseja</ion-label>
+                <ion-checkbox  #chec (ionChange)="marcar(chec.checked)" ></ion-checkbox>
+              </ion-item>
+          </ion-item-group>
+      </ion-card-content>
+  </ion-card>
+
+    <button ion-button outline item-end icon-left round class="v" (click)="consultar()">
+        <ion-icon name="arrow-dropright-circle" ios="ios-bus" md="md-bus">    Consultar Código do Ônibus</ion-icon>
+    </button>
+
+</ion-content>
+
+
+<ion-footer >
+  <ion-toolbar color="dark">
+    <ion-title text-center>Todos os direitos Reservados.</ion-title>
+  </ion-toolbar>
+</ion-footer>

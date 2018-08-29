@@ -1,0 +1,50 @@
+
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Realizar Consulta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="v">
+
+  <form (ngSubmit)="enviar()" #formulario="ngForm">
+      <ion-item>
+          <ion-label stacked>Nome:</ion-label>
+          <ion-input [(ngModel)]="consulta.nome" name='consulta.nome' type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Cidade:</ion-label>
+          <ion-input [(ngModel)]="consulta.cidade" name='consulta.cidade' type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>CPF:</ion-label>
+          <ion-input [(ngModel)]="consulta.cpf" [brmasker]="{mask:'000.000.000-00', len:14, type:'num'}" name='consulta.cpf' type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Código:</ion-label>
+          <ion-input [(ngModel)]="consulta.codigo" name='consulta.codigo' type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Data de Confirmação:</ion-label>
+          <ion-datetime [(ngModel)]="consulta.data" name='consulta.data' displayFormat='DD/MM/YYYY'></ion-datetime>
+      </ion-item>
+  </form>
+    <button ion-button item-end icon-left round (click)="formulario.ngSubmit.emit()">
+        <ion-icon name="arrow-dropright">    Enviar</ion-icon>
+    </button>
+
+    <button ion-button item-end icon-only round color="dark" (click)="listaconsulta()">
+        <ion-icon ios="ios-exit" md="md-exit">   Ir para Lista de Consultas</ion-icon>
+    </button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-title text-center >Todos os direitos Reservados.</ion-title>
+  </ion-toolbar>
+</ion-footer>
